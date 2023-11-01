@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Header() {
   return (
-    <div className='flex justify-between px-2 py-4'>
+    <div className='flex justify-between px-2 py-4 relative z-50'>
       <Image
         src='/white-logo.svg'
         alt='Iris Tamara van Ollefen logo'
