@@ -1,9 +1,24 @@
-import Image from 'next/image'
+import { performRequest } from 'lib/datocms'
 
-export default function Home() {
+import Hero from './_components/hero'
+
+const TEST_QUERY = `
+  query testHome {
+    testHome {
+      testHome
+    }
+  }
+`
+
+export default async function Home() {
+  const {
+    data: { testHome },
+  } = await performRequest({ query: TEST_QUERY })
+
+  console.log(testHome)
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24'>
-      <h1>Hi, this is my new portfolio</h1>
+      <Hero />
     </main>
   )
 }
