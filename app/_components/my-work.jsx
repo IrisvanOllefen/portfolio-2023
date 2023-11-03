@@ -23,7 +23,7 @@ export default function MyWork(workCardData) {
                 </li>
                 <li className='pb-2'>
                   <Link
-                    href={`/${workCard.productName}`}
+                    href={`/${workCard.urlName}`}
                     className='md:text-lg font-semibold hover:text-sky-400 active:text-sky-600'>
                     Lees over dit product
                   </Link>
@@ -33,7 +33,7 @@ export default function MyWork(workCardData) {
                 {workCard.image.map((image) => {
                   return (
                     <Image
-                      key='hi'
+                      key={image.image.responsiveImage.src}
                       src={image.image.responsiveImage.src}
                       alt={image.image.responsiveImage.alt}
                       width={image.image.responsiveImage.width}

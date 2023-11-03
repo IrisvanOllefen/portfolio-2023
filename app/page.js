@@ -27,6 +27,7 @@ const DATOCMS_QUERY = `
       }
     }
     allMyWorkPages {
+      urlName
       productName
       companyOrClient
       typeOfProduct
