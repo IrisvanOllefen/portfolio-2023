@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <div className='flex justify-between px-2 py-4 bg-black'>
+    <div className='flex items-end -mt-60 justify-between px-2 py-4 bg-rectangle-background-bottom bg-repeat-x h-[295px]'>
       <Link href='/'>
         <Image
           src='/black-logo.svg'

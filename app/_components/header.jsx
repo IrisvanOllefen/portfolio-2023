@@ -6,7 +6,7 @@ export default function Header() {
     <div className='flex justify-between px-2 py-4 relative z-50'>
       <Link href='/'>
         <Image
-          src='/white-logo.svg'
+          src='/black-logo.svg'
           alt='Iris Tamara van Ollefen logo'
           width='55'
           height='360'
@@ -16,7 +16,7 @@ export default function Header() {
         <li>
           <Link href='https://twitter.com/irisvanollefen' target='_blank'>
             <Image
-              src='/twitter.svg'
+              src='/twitter-white.svg'
               alt='Twitter icon'
               width='25'
               height='25'
@@ -25,7 +25,12 @@ export default function Header() {
         </li>
         <li>
           <Link href='https://github.com/IrisvanOllefen' target='_blank'>
-            <Image src='/github.svg' alt='Github icon' width='25' height='25' />
+            <Image
+              src='/github-white.svg'
+              alt='Github icon'
+              width='25'
+              height='25'
+            />
           </Link>
         </li>
         <li>
@@ -33,7 +38,7 @@ export default function Header() {
             href='https://www.linkedin.com/in/iris-van-ollefen-38346417b/'
             target='_blank'>
             <Image
-              src='/linkedin.svg'
+              src='/linkedin-white.svg'
               alt='linkedin icon'
               width='25'
               height='25'

@@ -1,6 +1,7 @@
 import './globals.css'
 import { Montserrat } from 'next/font/google'
 
+import TopBlob from './_components/top-blob'
 import Header from './_components/header'
 import Footer from './_components/footer'
 
@@ -15,9 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en'>
       <body className={montserrat.className}>
-        <Header />
-        {children}
-        <Footer />
+        <TopBlob />
+        <div className='relative z-20'>
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   )
