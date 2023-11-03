@@ -4,12 +4,14 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <div className='flex justify-between px-2 py-4 relative z-50'>
-      <Image
-        src='/white-logo.svg'
-        alt='Iris Tamara van Ollefen logo'
-        width='55'
-        height='360'
-      />
+      <Link href='/'>
+        <Image
+          src='/white-logo.svg'
+          alt='Iris Tamara van Ollefen logo'
+          width='55'
+          height='360'
+        />
+      </Link>
       <ul className='flex gap-8 px-4 pt-2'>
         <li>
           <Link href='https://twitter.com/irisvanollefen' target='_blank'>
