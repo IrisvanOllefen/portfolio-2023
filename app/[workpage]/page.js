@@ -38,35 +38,49 @@ export default async function WorkPage({ params }) {
 
   return (
     <main className='flex min-h-screen flex-col py-8 px-8'>
-      <h1 className='text-3xl md:text-4xl font-medium'>
+      <h1 className='text-3xl md:text-5xl font-medium '>
         {myWorkPage.productName}
       </h1>
-      <ul className='flex justify-between my-8'>
-        <li>{myWorkPage.typeOfProduct}</li>
-        <li>{myWorkPage.companyOrClient}</li>
-        <li>{myWorkPage.usedTechnologies}</li>
+      <ul className='flex justify-between my-8 mx-20'>
+        <li className='flex flex-col items-center'>
+          <span className='font-medium'>Type product</span>
+          <span>{myWorkPage.typeOfProduct}</span>
+        </li>
+        <li className='flex flex-col items-center'>
+          <span className='font-medium'>In opdracht van</span>
+          <span>{myWorkPage.companyOrClient}</span>
+        </li>
+        <li className='flex flex-col items-center'>
+          <span className='font-medium'>Gebruikte technologieën</span>
+          <span>{myWorkPage.usedTechnologies}</span>
+        </li>
         <li>
           {myWorkPage.linkToProduct.map((linkItem) => {
             return (
               <Link
                 key={linkItem.linkName}
                 href={`${linkItem.link}`}
-                target='_blank'>
+                target='_blank'
+                className='font-medium underline underline-offset-4'>
                 {linkItem.linkName}
               </Link>
             )
           })}
         </li>
       </ul>
-      {myWorkPage.paragraphBlock.map((singleParagraph) => {
-        return (
-          <section key={singleParagraph.title} className='my-4'>
-            <h2 className='md:text-xl font-medium'>{singleParagraph.title}</h2>
-            <p>{singleParagraph.paragraph}</p>
-          </section>
-        )
-      })}
-      <section className='flex gap-4 h-[300px] overflow-scroll my-4'>
+      <div className='mt-16'>
+        {myWorkPage.paragraphBlock.map((singleParagraph) => {
+          return (
+            <section key={singleParagraph.title} className='my-8'>
+              <h2 className='md:text-xl font-medium'>
+                {singleParagraph.title}
+              </h2>
+              <p>{singleParagraph.paragraph}</p>
+            </section>
+          )
+        })}
+      </div>
+      <section className='flex gap-4 h-[300px] overflow-scroll my-4 mb-20'>
         {myWorkPage.imageGallery.map((singleImage) => {
           return (
             <Image
@@ -75,7 +89,7 @@ export default async function WorkPage({ params }) {
               alt={singleImage.responsiveImage.alt}
               width={singleImage.responsiveImage.width}
               height={singleImage.responsiveImage.height}
-              className='max-h-[300px] w-auto '
+              className='max-h-[300px] w-auto shadow-xl'
             />
           )
         })}
