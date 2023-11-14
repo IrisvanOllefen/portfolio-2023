@@ -38,7 +38,7 @@ export default function MyWork(workCardData) {
                       alt={image.image.responsiveImage.alt}
                       width={image.image.responsiveImage.width}
                       height={image.image.responsiveImage.height}
-                      className='md:w-[281px] md:h-[187px] lg:w-[426px] lg:h-[283px] xl:w-[500px] xl:h-[333px] shadow-xl'
+                      className='mb-14 md:mb-0 md:w-[281px] md:h-[187px] lg:w-[426px] lg:h-[283px] xl:w-[500px] xl:h-[333px] shadow-xl'
                     />
                   )
                 })}
