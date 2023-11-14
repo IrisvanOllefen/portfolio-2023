@@ -31,7 +31,6 @@ export default function MyWork(workCardData) {
               </div>
               <li>
                 {workCard.image.map((image) => {
-                  console.log(image)
                   return (
                     <Image
                       key={image.image.responsiveImage.src}

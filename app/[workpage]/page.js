@@ -42,7 +42,7 @@ export default async function WorkPage({ params }) {
         {myWorkPage.productName}
       </h1>
       <ul className='flex justify-between my-8 mx-20'>
-        <li className='flex flex-col items-center'>
+        <li className='flex flex-col items-center justify-between'>
           <span className='font-medium'>Type product</span>
           <span>{myWorkPage.typeOfProduct}</span>
         </li>
@@ -54,7 +54,7 @@ export default async function WorkPage({ params }) {
           <span className='font-medium'>Gebruikte technologieën</span>
           <span>{myWorkPage.usedTechnologies}</span>
         </li>
-        <li>
+        <li className='flex flex-col items-center justify-between gap-1'>
           {myWorkPage.linkToProduct.map((linkItem) => {
             return (
               <Link
@@ -80,7 +80,7 @@ export default async function WorkPage({ params }) {
           )
         })}
       </div>
-      <section className='flex gap-4 h-[300px] overflow-scroll my-4 mb-20'>
+      <section className='flex gap-4 h-[450px] overflow-scroll my-4 mb-20'>
         {myWorkPage.imageGallery.map((singleImage) => {
           return (
             <Image
@@ -89,7 +89,7 @@ export default async function WorkPage({ params }) {
               alt={singleImage.responsiveImage.alt}
               width={singleImage.responsiveImage.width}
               height={singleImage.responsiveImage.height}
-              className='max-h-[300px] w-auto shadow-xl'
+              className='h-[400px] w-auto shadow-xl'
             />
           )
         })}
