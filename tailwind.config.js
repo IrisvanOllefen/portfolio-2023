@@ -19,6 +19,10 @@ module.exports = {
         xl: '1280px',
         '2xl': '1536px',
       },
+      colors: {
+        'custom-blue': '#93C5FD',
+        'custom-blue-hover': '#6083AA',
+      },
     },
   },
   plugins: [],

@@ -1,7 +1,10 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function MyWork(workCardData) {
+  const router = useRouter()
   return (
     <div className='mt-24'>
       <h3 className='text-2xl font-medium pb-2 flex justify-center'>
@@ -9,9 +12,13 @@ export default function MyWork(workCardData) {
       </h3>
       <div className='mt-4 md:mt-8 md:grid md:grid-cols-2 md:gap-4'>
         {workCardData.workCardData.map((workCard, index) => {
+          const projectUrl = `/${workCard.urlName}`
           return (
-            <ul key={index} className='pb-6 text-center'>
-              <div className='lg:w-[426px] lg:h-[283px] xl:w-[500px] xl:h-[333px] lg:absolute lg:flex lg:flex-col lg:gap-1 lg:items-center lg:bg-black lg:bg-opacity-75 lg:justify-center lg:text-white lg:shadow-2xl lg:opacity-0 lg:hover:opacity-100 lg:transition lg:duration-500 lg:ease-in-out'>
+            <div
+              key={index}
+              className='pb-6 text-center cursor-pointer'
+              onClick={() => router.push(projectUrl)}>
+              <ul className='lg:w-[426px] lg:h-[283px] xl:w-[500px] xl:h-[333px] lg:absolute lg:flex lg:flex-col lg:gap-1 lg:items-center lg:bg-black lg:bg-opacity-75 lg:justify-center lg:text-white lg:shadow-2xl lg:opacity-0 lg:hover:opacity-100 lg:transition lg:duration-500 lg:ease-in-out'>
                 <li className='md:text-lg font-semibold'>
                   {workCard.productName}
                 </li>
@@ -23,13 +30,13 @@ export default function MyWork(workCardData) {
                 </li>
                 <li className='pb-2'>
                   <Link
-                    href={`/${workCard.urlName}`}
-                    className='md:text-lg font-semibold hover:text-sky-400 active:text-sky-600'>
+                    href={projectUrl}
+                    className='md:text-lg font-semibold hover:text-custom-blue active:text-custom-blue-hover'>
                     Lees over dit product
                   </Link>
                 </li>
-              </div>
-              <li>
+              </ul>
+              <div>
                 {workCard.image.map((image) => {
                   return (
                     <Image
@@ -42,8 +49,8 @@ export default function MyWork(workCardData) {
                     />
                   )
                 })}
-              </li>
-            </ul>
+              </div>
+            </div>
           )
         })}
       </div>

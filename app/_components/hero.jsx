@@ -7,6 +7,7 @@ export default function Hero(heroData) {
         {heroData.heroData.images.map((image) => {
           return (
             <Image
+              priority
               key={image.image.responsiveImage.alt}
               src={image.image.responsiveImage.src}
               alt={image.image.responsiveImage.alt}

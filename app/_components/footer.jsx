@@ -9,7 +9,7 @@ export default function Footer() {
           src='/black-logo.svg'
           alt='Iris Tamara van Ollefen logo'
           width='55'
-          height='360'
+          height='83'
         />
       </Link>
       <ul className='flex gap-8 px-4 pt-2'>

@@ -4,7 +4,7 @@ export default function MySkills(skillsPageData) {
       <h3 className='text-2xl font-medium pb-2 flex justify-center'>
         Mijn skills
       </h3>
-      <div className='flex gap-20 text-center mt-6'>
+      <div className='gap-20 mt-6 grid sm:grid-cols-2 lg:grid-cols-4'>
         {skillsPageData.skillsPageData.skillBlock.map((skillBlock) => {
           return (
             <section key={skillBlock.skillBlockTitle}>
