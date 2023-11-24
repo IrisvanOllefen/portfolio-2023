@@ -34,7 +34,24 @@ query workPage {
 export const dynamicParams = false
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-static-params
-export async function generateStaticParams() {}
+export async function generateStaticParams() {
+  const {
+    data: { allMyWorkPages },
+  } = await performRequest({
+    query: `
+  query allWorkPages {
+    allMyWorkPages {
+      urlName
+    }
+  }
+  `,
+  })
+  return allMyWorkPages.map((item) => {
+    return {
+      workpage: item.urlName,
+    }
+  })
+}
 
 export default async function WorkPage({ params }) {
   const {
