@@ -1,6 +1,4 @@
 import { performRequest } from 'lib/datocms'
-
-import Image from 'next/image'
 import Link from 'next/link'
 
 import ImageComponent from './image-component'
@@ -32,6 +30,11 @@ query workPage {
     }
 }
 `
+
+export const dynamicParams = false
+
+// https://nextjs.org/docs/app/api-reference/functions/generate-static-params
+export async function generateStaticParams() {}
 
 export default async function WorkPage({ params }) {
   const {
